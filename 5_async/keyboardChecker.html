@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboardChecker</title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <center>
+        <div id="insert">
+            <div class="key">Press Any Key For Checking</div>
+        </div>
+    </center>
+</body>
+
+<script>
+    const insert = document.querySelector('#insert');
+    window.addEventListener('keydown', (E) => {
+        insert.innerHTML = `
+        <div class="insert">
+            <table border=1>
+            <tr>
+                <td>Key</td>
+                <td>KeyCode</td> 
+                <td>code</td> 
+            </tr>
+            <tr>
+                <td>${E.key === ' ' ? " space" : E.key}</td>
+                <td>${E.keyCode}</td> 
+                <td>${E.code}</td> 
+            </tr>
+            </table>
+         </div>
+        `;
+
+    })
+</script>
+
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In JS</title>
+</head>
+
+<body style="background-color: #414141; color: whitesmoke;">
+    <h2>Images</h2>
+    <ul id="Images">
+        <li><img src="dmc-delorean-synth-ride-hr.jpg" width="200px" id="car" alt="photoshop"></li>
+        <li><img src="horses-dawn-minimal-4k-b6.jpg " width="200px" id="horse" alt=""></li>
+        <li><img src="jannes-jacobs-KRIGA7iUN08-unsplash.jpg" width="200px" id="mountain" alt=""></li>
+        <li><a href="google.com" id="google" style="color: orange;">google</a></li>
+    </ul>
+</body>
+<script>
+    //Events run sequentially;
+    // document.getElementById('horse').onclick = () => {
+    //     alert('click noted');
+    // }
+    // document.getElementById('horse').addEventListener('click', () => {
+    //     alert(`click noted`);
+    // }, false); //by default it is fault;
+    // //attachEvent() [past];
+
+
+    // document.getElementById('Images').addEventListener('click', (E) => {
+    //     console.log('ul clicked');
+    // }, true);
+    // document.getElementById("horse").addEventListener('click', (E) => {
+    //     console.log('horse clicked');
+    // }, true);
+    // //so called capturing mode.
+
+
+    // document.getElementById('Images').addEventListener('click', (E) => {
+    //     console.log('ul clicked');
+    // }, false);
+
+    // document.getElementById("horse").addEventListener('click', (E) => {
+    //     console.log('horse clicked');
+
+    // }, false);
+    // // //so called Bubbling
+
+
+    document.getElementById('Images').addEventListener('click', (E) => {
+        console.log('ul clicked');
+    });
+
+    document.getElementById("horse").addEventListener('click', (E) => {
+        console.log('horse clicked');
+        E.stopPropagation(); // likewise preventDefault...this will not allow our event for Bubbling ( mane upor a jabe na bara);
+    });
+    document.getElementById('google').addEventListener('click', (E) => {
+        E.preventDefault();
+        console.log(`google clicked`);
+    })
+
+</script>
+
+</html>
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In JS</title>
+</head>
+
+<body style="background-color: #414141; color: whitesmoke;">
+    <h2>Images</h2>
+    <ul id="Images">
+        <li><img src="dmc-delorean-synth-ride-hr.jpg" width="200px" id="car" alt="photoshop"></li>
+        <li><img src="horses-dawn-minimal-4k-b6.jpg " width="200px" id="horse" alt=""></li>
+        <li><img src="jannes-jacobs-KRIGA7iUN08-unsplash.jpg" width="200px" id="mountain" alt=""></li>
+        <li><a href="" id="google" style="color: orange;">google</a></li>
+    </ul>
+</body>
+<script>
+    // document.querySelector('#Images').addEventListener('click', (E) => {
+    //     let remover = E.target.parentNode;  //target will seclect the pic's img tag which's parentNode is Li and we will remove it..
+    //     remover.remove();
+    // });
+
+    // document.querySelector('#Images').addEventListener('click', (E) => {
+    //     let remover=E.target.parentNode;  //will seclect <li>
+    //     remover.parentNode.removeChild(remover); //will seclect li's parent ul and then remove his child which is again li;
+    // });
+
+    document.querySelector('#Images').addEventListener('click', (E) => {
+        if (E.target.tagName === 'IMG') {
+            let remover = E.target.parentNode;
+            remover.remove();
+        }
+
+    });
+
+
+</script>
+
+</html>
+
